@@ -1,4 +1,4 @@
-Attribute VB_Name = "Module1"
+
 Function DegToRad(deg) As Double
  Pi = 3.14159265358979
  DegToRad = (deg / 180 * Pi)
@@ -126,19 +126,3 @@ Function UTMXYToLatLon(ByVal easting As Double, ByVal northing As Double, ByVal 
   
   Set UTMXYToLatLon = MapXYToLatLon(easting, northing, cmeridian)
 End Function
-
-
-Sub Test()
-    Dim conversion As Collection
-    
-    easting = Range("A3").value  ' 411681.3
-    northing = Range("B3").value  ' 6022988.14
-    
-    Set conversion = UTMXYToLatLon(easting, northing, 32, True)
-
-    Range("E3").value = conversion(1)
-    Range("F3").value = conversion(2)
-    
-    Debug.Print conversion(1), conversion(2)
-
-End Sub
